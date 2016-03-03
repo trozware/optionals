@@ -137,5 +137,5 @@ var socialMedia: SocialMediaAccounts?
 socialMedia = SocialMediaAccounts()
 let twitterAccount = Person()
 
-socialMedia?.facebook = twitterAccount
+socialMedia?.twitter = twitterAccount
 let twitterHandle = socialMedia?.twitter?.handle
