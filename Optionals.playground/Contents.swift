@@ -24,7 +24,7 @@ let newInteger = optionalInteger!
 
 //: ### Using 'if let':
 
-func doubleNumberUsingIfLet(optionalInteger: Int?) -> Int? {
+func doubleNumberUsingIfLet(_ optionalInteger: Int?) -> Int? {
     if let integerValue = optionalInteger {
         // integerValue is not an optional
         // and is guaranteed to contain an Int
@@ -44,7 +44,7 @@ doubleNumberUsingIfLet(optionalInteger2)
 
 //: ### Using 'guard':
 
-func doubleNumberUsingGuard(optionalInteger: Int?) -> Int? {
+func doubleNumberUsingGuard(_ optionalInteger: Int?) -> Int? {
     guard let integerValue = optionalInteger else {
         // get out quickly,
         // returning nil to indicate failure
@@ -77,8 +77,10 @@ func isValidAddressBookEntry(firstName: String?, lastName: String?, emailAddress
     return false
 }
 
-isValidAddressBookEntry("Tim", lastName: "Cook", emailAddress: "tim@apple.com", phoneNumber: "+1 234 567 890")
-isValidAddressBookEntry("Tim", lastName: "Cook", emailAddress: "tim@apple.com", phoneNumber: nil)
+isValidAddressBookEntry(firstName: "Tim", lastName: "Cook",
+                        emailAddress: "tim@apple.com", phoneNumber: "+1 234 567 890")
+isValidAddressBookEntry(firstName: "Tim", lastName: "Cook",
+                        emailAddress: "tim@apple.com", phoneNumber: nil)
 
 
 //: #### Pyramid of Doom removed with Swift 2:
@@ -86,9 +88,9 @@ isValidAddressBookEntry("Tim", lastName: "Cook", emailAddress: "tim@apple.com", 
 func isValidAddressBookEntrySwift2(firstName: String?, lastName: String?, emailAddress: String?, phoneNumber: String?) -> Bool {
     if let
         validFirstName = firstName,
-        validLastName = lastName,
-        validEmail = emailAddress,
-        validPhone = phoneNumber {
+        let validLastName = lastName,
+        let validEmail = emailAddress,
+        let validPhone = phoneNumber {
             // print to stop compiler complaining about un-used variables
             print("\(validFirstName) \(validLastName) <\(validEmail)> #:\(validPhone)")
             return true
@@ -96,8 +98,10 @@ func isValidAddressBookEntrySwift2(firstName: String?, lastName: String?, emailA
     return false
 }
 
-isValidAddressBookEntrySwift2("Tim", lastName: "Cook", emailAddress: "tim@apple.com", phoneNumber: "+1 234 567 890")
-isValidAddressBookEntrySwift2("Tim", lastName: "Cook", emailAddress: "tim@apple.com", phoneNumber: nil)
+isValidAddressBookEntrySwift2(firstName: "Tim", lastName: "Cook",
+                              emailAddress: "tim@apple.com", phoneNumber: "+1 234 567 890")
+isValidAddressBookEntrySwift2(firstName: "Tim", lastName: "Cook",
+                              emailAddress: "tim@apple.com", phoneNumber: nil)
 
 
 //: #### 'guard' can be used in the same way:
@@ -105,9 +109,9 @@ isValidAddressBookEntrySwift2("Tim", lastName: "Cook", emailAddress: "tim@apple.
 func isValidAddressBookEntryUsingGuard(firstName: String?, lastName: String?, emailAddress: String?, phoneNumber: String?) -> Bool {
     guard let
         validFirstName = firstName,
-        validLastName = lastName,
-        validEmail = emailAddress,
-        validPhone = phoneNumber else {
+        let validLastName = lastName,
+        let validEmail = emailAddress,
+        let validPhone = phoneNumber else {
             return false
     }
 
@@ -116,8 +120,10 @@ func isValidAddressBookEntryUsingGuard(firstName: String?, lastName: String?, em
     return true
 }
 
-isValidAddressBookEntryUsingGuard("Tim", lastName: "Cook", emailAddress: "tim@apple.com", phoneNumber: "+1 234 567 890")
-isValidAddressBookEntryUsingGuard("Tim", lastName: "Cook", emailAddress: "tim@apple.com", phoneNumber: nil)
+isValidAddressBookEntryUsingGuard(firstName: "Tim", lastName: "Cook",
+                                  emailAddress: "tim@apple.com", phoneNumber: "+1 234 567 890")
+isValidAddressBookEntryUsingGuard(firstName: "Tim", lastName: "Cook",
+                                  emailAddress: "tim@apple.com", phoneNumber: nil)
 
 
 //: ### Optional chaining:
