@@ -1,5 +1,5 @@
 //: # Optionals:
-//: [Playground to accompany this tutorial article](http://troz.net/2016/02/learning-swift-optionals/)
+//: [Playground to accompany this tutorial article](https://troz.net/post/2016/learning-swift-optionals/)
 //:
 //: An optional is a variable of a specified type that can also be nil.
 //:
