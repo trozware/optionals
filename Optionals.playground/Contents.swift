@@ -86,14 +86,13 @@ isValidAddressBookEntry(firstName: "Tim", lastName: "Cook",
 //: #### Pyramid of Doom removed with Swift 2:
 
 func isValidAddressBookEntrySwift2(firstName: String?, lastName: String?, emailAddress: String?, phoneNumber: String?) -> Bool {
-    if let
-        validFirstName = firstName,
+    if let validFirstName = firstName,
         let validLastName = lastName,
         let validEmail = emailAddress,
         let validPhone = phoneNumber {
-            // print to stop compiler complaining about un-used variables
-            print("\(validFirstName) \(validLastName) <\(validEmail)> #:\(validPhone)")
-            return true
+        // print to stop compiler complaining about un-used variables
+        print("\(validFirstName) \(validLastName) <\(validEmail)> #:\(validPhone)")
+        return true
     }
     return false
 }
@@ -107,8 +106,7 @@ isValidAddressBookEntrySwift2(firstName: "Tim", lastName: "Cook",
 //: #### 'guard' can be used in the same way:
 
 func isValidAddressBookEntryUsingGuard(firstName: String?, lastName: String?, emailAddress: String?, phoneNumber: String?) -> Bool {
-    guard let
-        validFirstName = firstName,
+    guard let validFirstName = firstName,
         let validLastName = lastName,
         let validEmail = emailAddress,
         let validPhone = phoneNumber else {
