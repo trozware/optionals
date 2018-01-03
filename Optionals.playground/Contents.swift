@@ -62,7 +62,10 @@ doubleNumberUsingGuard(optionalInteger2)
 
 //: #### The Pyramid of Doom:
 
-func isValidAddressBookEntry(firstName: String?, lastName: String?, emailAddress: String?, phoneNumber: String?) -> Bool {
+func isValidAddressBookEntry(firstName: String?,
+                             lastName: String?,
+                             emailAddress: String?,
+                             phoneNumber: String?) -> Bool {
     if let validFirstName = firstName {
         if let validLastName = lastName {
             if let validEmail = emailAddress {
@@ -85,7 +88,10 @@ isValidAddressBookEntry(firstName: "Tim", lastName: "Cook",
 
 //: #### Pyramid of Doom removed with Swift 2:
 
-func isValidAddressBookEntrySwift2(firstName: String?, lastName: String?, emailAddress: String?, phoneNumber: String?) -> Bool {
+func isValidAddressBookEntrySwift2(firstName: String?,
+                                   lastName: String?,
+                                   emailAddress: String?,
+                                   phoneNumber: String?) -> Bool {
     if let validFirstName = firstName,
         let validLastName = lastName,
         let validEmail = emailAddress,
@@ -105,8 +111,12 @@ isValidAddressBookEntrySwift2(firstName: "Tim", lastName: "Cook",
 
 //: #### 'guard' can be used in the same way:
 
-func isValidAddressBookEntryUsingGuard(firstName: String?, lastName: String?, emailAddress: String?, phoneNumber: String?) -> Bool {
-    guard let validFirstName = firstName,
+func isValidAddressBookEntryUsingGuard(firstName: String?,
+                                       lastName: String?,
+                                       emailAddress: String?,
+                                       phoneNumber: String?) -> Bool {
+    guard
+        let validFirstName = firstName,
         let validLastName = lastName,
         let validEmail = emailAddress,
         let validPhone = phoneNumber else {
